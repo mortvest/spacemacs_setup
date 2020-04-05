@@ -1,0 +1,3 @@
+#!/bin/bash
+osascript ~/focus.scpt
+exec emacsclient --alternate-editor="" -cn "$@" --frame-parameters="((height . 73) (width . 135))"
