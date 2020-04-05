@@ -339,25 +339,14 @@ you should place your code here."
 (evil-leader/set-key "qj" 'frame-buffer-kill)
 (defun x-focus-frame (dummy))
 
-(setq-default dotspacemacs-configuration-layers '(
-                                                  (osx :variables osx-use-option-as-meta nil)))
+(setq-default dotspacemacs-configuration-layers '((osx :variables osx-use-option-as-meta nil)))
 (setq-default mac-right-option-modifier nil)
 (setq dotspacemacs-fullscreen-at-startup t)
 
-;; (add-hook 'server-done-hook
-;;          (defun open-terminal ()
-;;            (shell-command "open -a Iterm")))
-
-;; (add-hook 'delete-frame-functions
-;;          (defun open-terminal ()
-;;            (shell-command "open -a Iterm")))
-
 (defun close-frame-buffer (frame)
-  (shell-command "open -a Iterm")
-  )
+  (shell-command "open -a Iterm"))
 
 (add-hook 'delete-frame-functions 'close-frame-buffer)
-;; (add-hook 'kill-buffer-hook 'delete-frame)
 
 
 
