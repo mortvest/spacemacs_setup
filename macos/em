@@ -1,3 +1,7 @@
 #!/bin/bash
-osascript ~/focus.scpt
+if pgrep "Emacs" > /dev/null; then
+    # osascript -e "tell app \"Emacs\" to activate"
+    open -a "Emacs"
+fi
+
 exec emacsclient --alternate-editor="" -cn "$@" --frame-parameters="((height . 73) (width . 135))"
